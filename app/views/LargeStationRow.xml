@@ -1,0 +1,8 @@
+<Alloy>
+    <ItemTemplate name="large">
+        <View bindId="wrapper">
+            <Label bindId="title" id="title" />
+            <Label bindId="country" id="country" />
+        </View>
+    </ItemTemplate>
+</Alloy>    

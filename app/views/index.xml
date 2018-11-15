@@ -1,0 +1,26 @@
+<Alloy>
+    <Collection src="Station" />
+    <NavigationWindow module="xp.ui">
+        	<Window title="ListView Demo">
+        		<ListView defaultItemTemplate="compact" id="myListView" onEditaction="handleEditAction">
+        		    <SearchBar></SearchBar>
+        		    <RefreshControl onRefreshstart="handleRefresh"></RefreshControl>
+        		    <Templates>
+                    <Require src="SmallStationRow" />
+                    <Require src="LargeStationRow" />
+        		    </Templates>
+        		    
+        		    <ListSection dataCollection="Station" dataFilter="filterCountries" dataFunction="refreshList" dataTransform="transformStation">
+                        <ListItem 
+                            title:text="{name}"
+                            country:text="{country}"
+                            wrapper:backgroundColor="{backgroundColor}"
+                            editActions="{editActions}"
+                            canEdit="true"
+                            template="{template}"
+                         />
+        		    </ListSection>
+        		</ListView>
+        	</Window>
+    </NavigationWindow>
+</Alloy>
